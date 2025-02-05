@@ -5,6 +5,7 @@
     <!ELEMENT to (#PCDATA)>
     <!ELEMENT subject (#PCDATA)>
     <!ELEMENT attachment (#PCDATA)>
+    <!ELEMENT body (#PCDATA)>
 ]>
 <message>
     <from>maria@gmail.com</from>
