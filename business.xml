@@ -2,6 +2,7 @@
 <!DOCTYPE business [
     <!ELEMENT business (videogame|address)+>
     <!ELEMENT videogame (title, developer)>
+    <!ATTLIST videogame id CDATA #REQUIRED>
     <!ELEMENT address (street, free_shipping)>
     <!ELEMENT street (#PCDATA)>
     <!ELEMENT title (#PCDATA)>
@@ -9,11 +10,11 @@
     <!ELEMENT free_shipping EMPTY>
 ]>
 <business>
-    <videogame>
+    <videogame id="1">
         <title>Dragon Quest IX</title>
         <developer>Level 5</developer>
     </videogame>
-    <videogame>
+    <videogame id="2">
         <title>Minecraft</title>
         <developer>Mojang</developer>
     </videogame>
