@@ -10,7 +10,7 @@
     <!ELEMENT title (#PCDATA)>
     <!ELEMENT class EMPTY>
     <!ATTLIST room name ID #REQUIRED>
-    <!ATTLIST room nrSeats CDATA #REQUIRED>
+    <!ATTLIST room nrSeats NMTOKEN #REQUIRED>
     <!ATTLIST teacher name CDATA #REQUIRED>
     <!ATTLIST teacher room IDREF #REQUIRED>
     <!ATTLIST course name NMTOKEN #REQUIRED>
