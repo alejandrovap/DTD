@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE hogwarts [
+    <!ELEMENT hogwarts (rooms, teachers, courses)>
+    <!ELEMENT rooms (room+)>
+    <!ELEMENT teachers (teacher+)>
+    <!ELEMENT courses (course+)>
+    <!ELEMENT room EMPTY>
+    <!ELEMENT teacher (title?)>
+    <!ELEMENT course (class+)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT class EMPTY>
+    <!ATTLIST room name ID #REQUIRED>
+    <!ATTLIST room nrSeats CDATA #REQUIRED>
+    <!ATTLIST teacher name CDATA #REQUIRED>
+    <!ATTLIST teacher room IDREF #REQUIRED>
+    <!ATTLIST course name NMTOKEN #REQUIRED>
+    <!ATTLIST course teacher CDATA #REQUIRED>
+    <!ATTLIST course nrStudents CDATA #IMPLIED>
+    <!ATTLIST class day CDATA #REQUIRED>
+    <!ATTLIST class hour CDATA #REQUIRED>
+]>
+<hogwarts>
+    <rooms>
+        <room name="The_Dungeon" nrSeats="34"/>
+        <room name="The_Cabin" nrSeats="163"/>
+    </rooms>
+    <teachers>
+        <teacher name="Snape" room="The_Dungeon">
+            <title>Professor</title>
+        </teacher>
+        <teacher name="Hagrid" room="The_Cabin"/>
+    </teachers>
+    <courses>
+        <course name="Potioncraft" teacher="Snape" nrStudents="28">
+            <class day="Monday" hour="10" />
+        </course>
+        <course name="Handling_of_Wild_Creatures" teacher="Hagrid">
+            <class day="Saturday" hour="13" />
+            <class day="Thursday" hour="7" />
+        </course>
+    </courses>
+</hogwarts>

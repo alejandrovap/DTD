@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE email SYSTEM "email.dtd">
+<email>
+    <from>pepe@gmail.com</from>
+    <to>jose@gmail.com</to>
+    <subject>Payment</subject>
+    <attachment>bank\extract.jpg</attachment>
+</email>

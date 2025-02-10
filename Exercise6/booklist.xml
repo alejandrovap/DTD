@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE booklist [
+    <!ELEMENT booklist (book)+>
+    <!ELEMENT book (bookname*, author+, price?, homepage)>
+    <!ELEMENT bookname (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT homepage (#PCDATA)>
+]>
+<booklist>
+    <book>
+        <bookname>The Great Gatsby</bookname>
+        <author>F. Scott Fitzgerald</author>
+        <price>20.99</price>
+        <homepage>https://thegreatestbooks.org/books/38</homepage>
+    </book>
+    <book>
+        <bookname>Don Quixote</bookname>
+        <author>Miguel de Cervantes</author>
+        <homepage>https://thegreatestbooks.org/books/190</homepage>
+    </book>
+    <book>
+        <bookname>The Talisman</bookname>
+        <author>Stephen King</author>
+        <author>Peter Straub</author>
+        <price>17.99</price>
+        <homepage>https://stephenking.es/obras/novelas/the-talisman/</homepage>
+    </book>
+</booklist>

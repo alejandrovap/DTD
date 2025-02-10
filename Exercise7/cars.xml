@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE stock [
+    <!ELEMENT stock (new-car|used-car)*>
+    <!ELEMENT new-car (model,price)>
+    <!ELEMENT used-car (model,price,mileage,condition?)>
+    <!ELEMENT model (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT mileage (#PCDATA)>
+    <!ELEMENT condition (#PCDATA)>
+]>
+<stock>
+    <new-car>
+        <model>SEAT Ibiza</model>
+        <price>20180&#8364;</price>
+    </new-car>
+    <used-car>
+        <model>Mercedes GLA</model>
+        <price>22900&#8364;</price>
+        <mileage>182494</mileage>
+    </used-car>
+    <used-car>
+        <model>Audi A3</model>
+        <price>23900&#8364;</price>
+        <mileage>72534</mileage>
+        <condition>Almost new</condition>
+    </used-car>
+</stock>
