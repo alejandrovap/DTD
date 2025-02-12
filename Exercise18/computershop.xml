@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE computershop [
+    <!ELEMENT computershop (catalogue, customers, sales)>
+    <!ELEMENT catalogue (product+)>
+    <!ELEMENT product (title, (brand|manufacturer), model, price, stock, reconditioned?)>
+    <!ATTLIST product 
+        idP ID #REQUIRED
+        vat (general|reduced|super-reduced) #REQUIRED
+        ean NMTOKEN #IMPLIED
+    >
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT brand (#PCDATA)>
+    <!ELEMENT manufacturer (#PCDATA)>
+    <!ELEMENT model (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ATTLIST price 
+        currency (EUR|USD) #REQUIRED
+        discount NMTOKEN "0"
+    >
+    <!ELEMENT stock (#PCDATA)>
+    <!ELEMENT reconditioned EMPTY>
+
+    <!ELEMENT customers (customer*)>
+    <!ELEMENT customer (idcard, ((firstname, surnames)|complete-name), telephone*, postaladdress?)>
+    <!ATTLIST customer 
+        idC ID #REQUIRED
+        creationdate NMTOKEN #REQUIRED
+    >
+    <!ELEMENT idcard (#PCDATA)>
+    <!ELEMENT firstname (#PCDATA)>
+    <!ELEMENT surnames (#PCDATA)>
+    <!ELEMENT complete-name (#PCDATA)>
+    <!ELEMENT telephone (#PCDATA)>
+    <!ELEMENT postaladdress (#PCDATA)>
+
+    <!ELEMENT sales (sale*)>
+    <!ELEMENT sale (products, totalprice, currency)>
+    <!ATTLIST sale 
+        date NMTOKEN #REQUIRED
+        customer IDREF #REQUIRED
+    >
+    <!ELEMENT products (item+)>
+    <!ELEMENT item (#PCDATA)>
+    <!ATTLIST item
+        id IDREF #REQUIRED
+        quantity NMTOKEN "1"
+    >
+    <!ELEMENT totalprice (#PCDATA)>
+    <!ELEMENT currency (#PCDATA)>
+]>
+<computershop>
+    <catalogue>
+        <product idP="P1" vat="reduced" ean="4006381333931">
+            <title>Keyboard</title>
+            <brand>Ozone</brand>
+            <model>Tactical Mini</model>
+            <price currency="EUR" discount="27">44</price>
+            <stock>3</stock>
+        </product>
+        <product idP="P2" vat="general">
+            <title>Phone</title>
+            <manufacturer>Apple</manufacturer>
+            <model>iPhone 13</model>
+            <price currency="EUR">349.29</price>
+            <stock>2</stock>
+            <reconditioned/>
+        </product>
+        <product idP="P3" vat="super-reduced">
+            <title>Phone</title>
+            <manufacturer>Apple</manufacturer>
+            <model>iPhone 15</model>
+            <price currency="EUR">629</price>
+            <stock>1</stock>
+            <reconditioned/>
+        </product>
+    </catalogue>
+    <customers>
+        <customer idC="C1" creationdate="12-05-2024">
+            <idcard>34562789E</idcard>
+            <firstname>Pepe</firstname>
+            <surnames>Rodríguez Martínez</surnames>
+            <telephone>608564323</telephone>
+        </customer>
+        <customer idC="C2" creationdate="17-02-2023">
+            <idcard>85746345Y</idcard>
+            <complete-name>Sergio Varela Vilas</complete-name>
+            <telephone>608564323</telephone>
+            <telephone>693236780</telephone>
+            <postaladdress>Calle San Clemente 4, 1ºIZQ</postaladdress>
+        </customer>
+    </customers>
+    <sales>
+        <sale date="12-05-2024" customer="C1">
+            <products>
+                <item id="P1" quantity="1"/>
+            </products>
+            <totalprice>44</totalprice>
+            <currency>euro</currency>
+        </sale>
+        <sale date="18-05-2024" customer="C2">
+            <products>
+                <item id="P2" quantity="1"/>
+                <item id="P1" quantity="1"/>
+            </products>
+            <totalprice>393.29</totalprice>
+            <currency>euro</currency>
+        </sale>
+    </sales>
+</computershop>
