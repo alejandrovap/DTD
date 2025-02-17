@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE computershop [
     <!ELEMENT computershop (catalogue, customers, sales)>
+    <!-- Catalogue-->
     <!ELEMENT catalogue (product+)>
     <!ELEMENT product (title, (brand|manufacturer), model, price, stock, reconditioned?)>
     <!ATTLIST product 
@@ -19,7 +20,7 @@
     >
     <!ELEMENT stock (#PCDATA)>
     <!ELEMENT reconditioned EMPTY>
-
+    <!-- Customers-->
     <!ELEMENT customers (customer*)>
     <!ELEMENT customer (idcard, ((firstname, surnames)|complete-name), telephone*, postaladdress?)>
     <!ATTLIST customer 
@@ -32,7 +33,7 @@
     <!ELEMENT complete-name (#PCDATA)>
     <!ELEMENT telephone (#PCDATA)>
     <!ELEMENT postaladdress (#PCDATA)>
-
+    <!-- Sales-->
     <!ELEMENT sales (sale*)>
     <!ELEMENT sale (products, totalprice, currency)>
     <!ATTLIST sale 
@@ -95,7 +96,7 @@
                 <item id="P1" quantity="1"/>
             </products>
             <totalprice>44</totalprice>
-            <currency>euro</currency>
+            <currency>EUR</currency>
         </sale>
         <sale date="18-05-2024" customer="C2">
             <products>
@@ -103,7 +104,7 @@
                 <item id="P1" quantity="1"/>
             </products>
             <totalprice>393.29</totalprice>
-            <currency>euro</currency>
+            <currency>EUR</currency>
         </sale>
     </sales>
 </computershop>
